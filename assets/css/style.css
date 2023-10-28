@@ -5,6 +5,7 @@
     --body-color: rgb(250, 250, 250);
     --color-white: rgb(255, 255, 255);
     --text-color-second: rgb(68, 68, 68);
+    --text-color-forth: rgb(106, 106, 106);
     --text-color-third: rgb(30, 159, 171);
     --first-color: rgb(110, 87, 224);
     --first-color-hover: rgb(40, 91, 212);
@@ -12,6 +13,7 @@
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 }
+
 /* ----- BASE ----- */
 *{
     margin: 0;
@@ -76,6 +78,7 @@ body{
     position: relative;
 }
 /* ----- NAVIGATION BAR ----- */
+
 nav{
     position: fixed;
     display: flex;
@@ -478,6 +481,7 @@ textarea {
     outline: none;
     resize: none;
     margin-bottom: 10px;
+
   }
 
 .input-field{
@@ -646,9 +650,44 @@ footer{
     }
 }
 
+
 #msg{
     color: #767676;
     font-size: 14px;
     margin-top: 0px;
     display: block;
+}
+
+@media all and (prefers-color-scheme: dark) {
+    :root {
+        background: #fff;
+        color: #000;
+    
+    .container{
+        background: #000;
+        
+    }
+    .icon{
+        box-shadow: 5px 2px 5px 2px rgba(95, 95, 95, 0.25);
+    }
+
+    .input-field, textarea {
+        color: var(--body-color); /* Change the text color to blue when focused */
+    }
+
+    .input-field:hover,
+    textarea:hover{
+        background: var(--color-white);
+        color: var(--text-color-second);
+    }
+    
+    .top-footer p{
+        color: var(--first-color);
+    }
+    .featured-name, .featured-text p,
+    .top-header h1, .skills-header h3{
+        color: var(--text-color-forth);
+    }
+
+}
 }

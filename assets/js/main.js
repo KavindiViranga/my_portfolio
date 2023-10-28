@@ -8,6 +8,7 @@ function myMenuFunction(){
     }
   }
 /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
+
   window.onscroll = function() {headerShadow()};
   function headerShadow() {
     const navHeader =document.getElementById("header");
@@ -21,13 +22,14 @@ function myMenuFunction(){
       navHeader.style.lineHeight = "90px";
     }
   }
+  
 /* ----- TYPING EFFECT ----- */
  var typingEffect = new Typed(".typedText",{
     strings : ["Front-End Developer","UI/UX Designer","Mobile App Developer"],
     loop : true,
     typeSpeed : 100, 
-    backSpeed : 70,
-    backDelay : 1000
+    backSpeed : 100,
+    backDelay : 950
  })
 /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
  const sr = ScrollReveal({
@@ -45,7 +47,7 @@ sr.reveal('.social_icons',{delay: 200})
 sr.reveal('.featured-image',{delay: 300})
 
 /* -- PROJECT BOX -- */
-sr.reveal('.project-box',{interval: 200})
+sr.reveal('.project-box',{interval: 50})
 /* -- HEADINGS -- */
 sr.reveal('.top-header',{})
 /* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
@@ -86,6 +88,30 @@ function scrollActive() {
     }
   })
 }
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzS6YMrR5t6LgvJfveB1r05Olo2683sspWB3dnPqL_r7zT3enUzrtJtxlTA_H28xS3X/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const emailField = form.querySelector('[name="Email"]'); // Replace "email" with the actual name or id of your email input field // Assuming you have an element with the id "message" for displaying messages
+      
+          if (emailField.value.trim() === '') {
+              msg.innerHTML = "Please enter your email"; // Display an error message
+          } else {
+              fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                  .then(response => {
+                      msg.innerHTML = "Message sent successfully";
+                      setTimeout(function () {
+                          msg.innerHTML = "";
+                          form.reset(); // Clear the form after a successful submission
+                      }, 3000);
+                  })
+                  .catch(error => console.error('Error!', error.message));
+          }
+      });
+
 
 window.addEventListener('scroll', scrollActive)
 

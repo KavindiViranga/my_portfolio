@@ -14,6 +14,7 @@
 <body>
    <div class="container">
     <!-- --------------- HEADER --------------- -->
+
       <nav id="header">
         <div class="nav-logo">
             <p class="nav-name">WebWiz</p>
@@ -47,6 +48,7 @@
         <div class="nav-menu-btn">
             <i class="uil uil-bars" onclick="myMenuFunction()"></i>
         </div>
+        
       </nav>
     <!-- -------------- MAIN ---------------- -->
     <main class="wrapper">
@@ -57,11 +59,10 @@
                 <span>Kavindi Viranga</span>
             </div>
             <div class="featured-name">
-                <p>I'm <span class="typedText"></span></p>
+                <p>I'm a <span class="typedText"></span></p>
             </div>
             <div class="featured-text-info">
-                <p>Experienced frontend developer with a passion for creating visually stunning
-                   and user-friendly websites.
+                <p>An undergraduate with a passion for web development, committed to creating visually stunning and user-friendly websites.
                 </p>
             </div>
             <div class="featured-text-btn">
@@ -260,28 +261,7 @@
     <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
 
-    <form name="submit-to-google-sheet">
-        
-      </form>
-      
-      <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzS6YMrR5t6LgvJfveB1r05Olo2683sspWB3dnPqL_r7zT3enUzrtJtxlTA_H28xS3X/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg=document.getElementById("msg")
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully"
-                sentTimeout(function(){
-                    msg.innerHTML = ""
-                },3000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
+    
       
 </body>
 </html>
@@ -291,6 +271,7 @@
   <a href="https://www.linkedin.com/in/thmkavindi/" target="_blank">
 <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
 </a>
+
 <a href="https://github.com/KavindiViranga" target="_blank">
 <div class="icon"><i class="uil uil-github-alt"></i></div>
 </a>
