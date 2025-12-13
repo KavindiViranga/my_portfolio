@@ -344,6 +344,58 @@ h3{
     padding: 2px 10px;
     border-radius: 5px;
 }
+/* ----- EXPERIENCE BOX ----- */
+.experience-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.experience-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 45%;
+    height: 300px;
+    background: var(--body-color);
+    border-radius: 20px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+    overflow: hidden;
+    .project-box h3{
+        font-size: 14px;
+        color: #777;
+        margin-top: 15px;
+       
+    }
+}
+.experience-box h3{
+    font-size: 14px;
+    color: #777;
+    margin-top: 15px;
+}
+.experience-box img {
+    width: 60%;
+    height: 150px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+.project-points {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: -10px;
+}
+
+.project-points li {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 6px;
+    font-size: 13px;
+    color: #6c6a6a;
+}
+
 /* ----- PROJECTS BOX ----- */
 .project-container{
     display: flex;
@@ -413,6 +465,32 @@ h3{
     color: var(--text-color-second);
     z-index: 2;
 }
+.fyp-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 370px;
+    background: var(--body-color);
+    border-radius: 20px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+    overflow: hidden;
+}
+
+.fyp-box h3{
+    font-size: 14px;
+    color: #777;
+    margin-top: 15px;
+}
+
+.fyp-box:hover.fyp-box>h3,
+.fyp-box:hover.fyp-box>button{
+    color: var(--text-color-second);
+    z-index: 2;
+}
+
 /* ----- CONTACT BOX ----- */
 .contact-info{
     position: relative;
