@@ -25,7 +25,7 @@ function myMenuFunction(){
   
 /* ----- TYPING EFFECT ----- */
  var typingEffect = new Typed(".typedText",{
-    strings : ["Front-End Developer","UI/UX Designer","Mobile App Developer"],
+    strings : ["Full-Stack Developer","Back-End Developer","Mobile App Developer"],
     loop : true,
     typeSpeed : 100, 
     backSpeed : 100,
