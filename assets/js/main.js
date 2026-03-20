@@ -7,6 +7,31 @@ function myMenuFunction(){
       menuBtn.className = "nav-menu";
     }
   }
+
+  function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("dark");
+
+    // Select the icon
+    const icon = document.querySelector(".theme-toggle i");
+
+    // Toggle icon class
+    if (body.classList.contains("dark")) {
+        icon.classList.remove("uil-moon");
+        icon.classList.add("uil-sun");
+    } else {
+        icon.classList.remove("uil-sun");
+        icon.classList.add("uil-moon");
+    }
+}
+
+  // load saved theme
+  window.onload = () => {
+      if(localStorage.getItem("theme") === "dark"){
+          document.body.classList.add("dark");
+      }
+  }
+
 /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
 
   window.onscroll = function() {headerShadow()};
@@ -38,6 +63,7 @@ function myMenuFunction(){
         duration: 2000,
         reset: true     
  })
+
 /* -- HOME -- */
 sr.reveal('.featured-text-card',{})
 sr.reveal('.featured-name',{delay: 100})

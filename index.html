@@ -46,6 +46,11 @@
                 </li>
             </ul>
         </div>
+        <!-- THEME TOGGLE -->
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <i class="uil uil-moon theme-toggle"></i>
+        </div>
+
         <div class="nav-button">
             <a href="assets/images/cv.pdf" download>
             <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
@@ -252,7 +257,7 @@
             </ul>
         </div>
         <div class="experience-box">
-            <img src="assets/images/p11.jpeg" alt="Project Image">
+            <img src="assets/images/p11.png" alt="Project Image">
             <h3>Midaya Packaging Industries (Pvt) Ltd</h3>
             <ul class="project-points">
                 <li>
@@ -316,13 +321,14 @@
             <div class="fyp-box">
                 <img src="assets/images/p13.jpeg" alt="Project Image">
                 <h3>MotionMate - Final Year Project</h3>
+                <a href="https://github.com/KavindiViranga/MotionMate.git" target="_blank"><button>View on Github</button></a>
                 <ul class="project-points">
                     <li>
                         <i class="fa-solid fa-rocket"></i>
                         Achieved high real-time accuracy by developing MotionMate, a live motion tracking system for physiotherapy exercises using a hybrid LRCN (CNN + LSTM) model.                
                     <li>
                     <li>
-                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-gear"a></i>
                         Integrated Flask, TensorFlow, and OpenCV for live video analysis, sequential frame processing, and real-time pose correction.               
                     <li>
                     <li>
@@ -330,6 +336,16 @@
                         Built an interactive web interface with HTML, CSS, and JavaScript to provide instant visual feedback and enhance user engagement.              
                     <li>
                 </ul>
+            </div>
+            <div class="project-box">
+                <img src="assets/images/p16.png" alt="Project Image">
+                    <h3>ImageNova</h3>
+                    <a href="https://github.com/KavindiViranga/AI-FitnessTracking-Application.git" target="_blank"><button>View on Github</button></a>
+            </div>
+            <div class="project-box">
+                <img src="assets/images/p14.PNG" alt="Project Image">
+                    <h3>FitPulse</h3>
+                    <a href="https://github.com/KavindiViranga/ImageNova.git" target="_blank"><button>View on Github</button></a>
             </div>
           </div>
        </section>
@@ -405,14 +421,19 @@
     <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
 
-    
+    <script>
+        const menuBtn = document.querySelector(".nav-menu-btn i");
+        const navMenu = document.getElementById("myNavMenu");
+
+        function myMenuFunction() {
+            navMenu.classList.toggle("active");
+        }
+    </script>
       
 </body>
 </html>
- 
 
-
-  <a href="https://www.linkedin.com/in/thmkavindi/" target="_blank">
+<a href="https://www.linkedin.com/in/thmkavindi/" target="_blank">
 <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
 </a>
 

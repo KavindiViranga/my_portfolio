@@ -14,6 +14,21 @@
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+/* DARK MODE */
+body.dark{
+    --body-color: #0f172a;
+    --color-white: #1e293b;
+    --text-color-second: #e2e8f0;
+    --text-color-forth: #cbd5f5;
+    --text-color-third: #38bdf8;
+
+    --first-color: #818cf8;
+    --first-color-hover: #6366f1;
+    --second-color: #0ea5e9;
+    --third-color: #facc15;
+
+    --first-shadow-color: rgba(255,255,255,0.1);
+}
 /* ----- BASE ----- */
 *{
     margin: 0;
@@ -81,18 +96,22 @@ body{
 
 nav{
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 90px;
     line-height: 90px;
     background: var(--body-color);
-    padding-inline: 9vw;
+    padding: 0 5vw; /* smaller padding for better responsiveness */
     transition: .3s;
     z-index: 100;
 }
+
 .nav-logo{
-   position: relative;
+    position: relative;
 }
 .nav-name{
     font-size: 30px;
@@ -106,8 +125,17 @@ nav{
     font-size: 5em;
     color: var(--text-color-second);
 }
-.nav-menu, .nav_menu_list{
+
+/* NAV MENU */
+.nav-menu{
     display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav_menu_list{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .nav-menu .nav_list{
     list-style: none;
@@ -117,9 +145,10 @@ nav{
     text-decoration: none;
     color: var(--text-color-second);
     font-weight: 500;
-    padding-inline: 15px;
-    margin-inline: 20px;
+    padding: 0 15px;
 }
+
+/* NAV BUTTONS */
 .nav-menu-btn{
     display: none;
 }
@@ -127,10 +156,16 @@ nav{
     font-size: 28px;
     cursor: pointer;
 }
+.theme-toggle{
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ACTIVE LINK INDICATOR */
 .active-link{
     position: relative;
     color: var(--first-color);
-    transition: .3;
+    transition: 0.3s;
 }
 .active-link::after{
     content: '';
@@ -143,6 +178,7 @@ nav{
     background: var(--first-color);
     border-radius: 50%;
 }
+
 /* ----- WRAPPER DESIGN ----- */
 .wrapper{
     padding-inline: 10vw;
@@ -359,17 +395,11 @@ h3{
     align-items: center;
     flex-direction: column;
     width: 45%;
-    height: 300px;
+    min-height: 30vh;
     background: var(--body-color);
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
-    .project-box h3{
-        font-size: 14px;
-        color: #777;
-        margin-top: 15px;
-       
-    }
 }
 .experience-box h3{
     font-size: 14px;
@@ -411,7 +441,7 @@ h3{
     align-items: center;
     flex-direction: column;
     width: 30%;
-    height: 250px;
+    min-height: 25vh;
     background: var(--body-color);
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
@@ -472,7 +502,7 @@ h3{
     align-items: center;
     flex-direction: column;
     width: 80%;
-    height: 420px;
+    height: 470px;
     background: var(--body-color);
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
@@ -490,6 +520,36 @@ h3{
     height: 250px;
     border-radius: 15px;
     margin-top: 15px;
+}
+
+.fyp-box button {
+    width: 120px;
+    height: 40px;
+    border: none; /* Remove border to eliminate border-color */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: var(--third-color); /* Change background to your preferred color (e.g., second color) */
+    color: var(--color-white);
+    cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+  }
+
+  .fyp-box button:hover {
+    background: var(--text-color-second);
+  }
+
+ .contact-info::after{
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    background: var(--second-color);
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+    z-index: 1;
+}
+.fyp-box:hover.fyp-box::after,
+.contact-info:hover.contact-info::after{
+    bottom: 0;
 }
 
 .fyp-box:hover.fyp-box>h3,
@@ -548,8 +608,9 @@ h3{
 input[type="text"],input[type="email"]{
     width: 49.3%; /* Adjust the width to your preference */
     height: 55px;
-    background: transparent;
-    border: 2px solid #dbdbdb;
+    background: #1e293b;
+    color: #fff;
+    border: 1px solid #444;
     border-radius: 10px;
     padding: 0 20px;
     outline: none;
@@ -559,8 +620,9 @@ input[type="text"],input[type="email"]{
 textarea {
     width: 100%;
     height: 250px; /* This maintains the height of the "Message" field */
-    background: transparent;
-    border: 2px solid #dbdbdb;
+    background: #1e293b;
+    color: #fff;
+    border: 1px solid #444;
     border-radius: 10px;
     padding: 15px 20px;
     outline: none;
@@ -605,7 +667,7 @@ footer{
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    background: #F8F8F8;
+    background: var(--color-white);
     padding-block: 40px 60px;
 }
 .top-footer p{
@@ -632,16 +694,7 @@ footer{
     font-size: 14px;
     margin-top: 10px;
 }
-/* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
-@media only screen and (max-width: 1024px){
-    .featured-text{
-        padding: 0;
-    }
-    .image, .image img{
-        width: 320px;
-        height: 320px;
-    }
-}
+
 /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
 @media only screen and (max-width: 900px) {
     .nav-button{
@@ -719,60 +772,56 @@ footer{
         width: 80%;
     }
 }
-/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
-@media only screen and (max-width: 540px){
-    .featured-name{
-        font-size: 40px;
-    }
-    .project-box{
-        width: 100%;
-    }
-    .form-inputs{
-        flex-direction: column;
-    }
-    .input-field{
-        width: 100%;
-    }
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 900px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 5vw;
+  }
+
+  .nav-logo {
+    order: 1; /* stays at the start */
+  }
+
+  .theme-toggle {
+    order: 2; /* stays separate from nav-menu */
+    margin-left: auto; /* pushes it to the right */
+  }
+
+  .nav-menu-btn {
+    order: 3;
+    margin-left: 10px;
+  }
+
+  .nav-menu {
+    order: 4;
+    width: 100%;
+    top: 90px; /* below navbar */
+    left: -100%;
+    position: fixed;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--body-color);
+    backdrop-filter: blur(15px);
+    height: auto;
+    padding: 20px 0;
+    transition: 0.3s;
+    z-index: 99;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
 }
-
-
 #msg{
-    color: #767676;
-    font-size: 14px;
-    margin-top: 0px;
-    display: block;
+color: #767676;
+font-size: 14px;
+margin-top: 0px;
+display: block;
 }
 
-@media all and (prefers-color-scheme: dark) {
-    :root {
-        background: #fff;
-        color: #000;
-    
-    .container{
-        background: #000;
-        
-    }
-    .icon{
-        box-shadow: 5px 2px 5px 2px rgba(95, 95, 95, 0.25);
-    }
 
-    .input-field, textarea {
-        color: var(--body-color); /* Change the text color to blue when focused */
-    }
-
-    .input-field:hover,
-    textarea:hover{
-        background: var(--color-white);
-        color: var(--text-color-second);
-    }
-    
-    .top-footer p{
-        color: var(--first-color);
-    }
-    .featured-name, .featured-text p,
-    .top-header h1, .skills-header h3{
-        color: var(--text-color-forth);
-    }
-
-}
-}
